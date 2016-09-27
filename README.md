@@ -1,0 +1,2 @@
+# RoyalNumbers
+HackerRank problem RoyalNumbers
