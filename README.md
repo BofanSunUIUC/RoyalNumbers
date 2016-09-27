@@ -1,2 +1,0 @@
-# RoyalNames
-HackerRank problem RoyalNames
