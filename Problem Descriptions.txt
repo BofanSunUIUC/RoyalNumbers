@@ -1,3 +1,9 @@
-An ordinal number is a word representing rank or sequential order. The name convention for royal names is to follow a frist name with an ordinal number, which is essentially a Roman numeral used to indicate the birth order of two people having the same name.
+An ordinal number is a word representing rank or sequential order. 
+The name convention for royal names is to follow a frist name with an ordinal number, 
+which is essentially a Roman numeral used to indicate the birth order of two people having the same name.
 
-Complete the getSortedList function. It has 1 paramter: an array of royal name strins, names. Each royal name sting consists of a first name, followed by a single space, follewed by a Roman numeral. Your function must sort the names lexicographically (alphabetically) by first name; if two or more first names are the same, it must sort those duplicate first names by ascending ordinal number. It must then return the sorted array of royal name strings.
+Complete the getSortedList function. It has 1 paramter: an array of royal name strins, names. 
+Each royal name sting consists of a first name, followed by a single space, follewed by a Roman numeral. 
+Your function must sort the names lexicographically (alphabetically) by first name; 
+if two or more first names are the same, it must sort those duplicate first names by ascending ordinal number. 
+It must then return the sorted array of royal name strings.
