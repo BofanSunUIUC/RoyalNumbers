@@ -9,6 +9,7 @@ public class RoyalNumbers {
     private static final Map<Character, Integer> mapRank;
     static
     {
+	//Map the Roman Number to its rank. 1 represents the lowest rank.
     	mapRank = new HashMap<Character, Integer>();
     	mapRank.put('I', 1);
     	mapRank.put('V', 2);
@@ -21,7 +22,7 @@ public class RoyalNumbers {
     
     private static final Map<Character, Integer> mapRoman;
     static
-    {
+    {	//Map the Roman Number to its decimal value.
     	mapRoman = new HashMap<Character, Integer>();
     	mapRoman.put('I', 1);
     	mapRoman.put('V', 5);
@@ -41,12 +42,16 @@ public class RoyalNumbers {
 		}
 	}
 	
+	//Sort Person according to their name
+	//In the case of people who have same first and last name,
+	//sort them by Roman Number in their name.
 	public static String[] getSortedList(String[] names){
 		if(names.length < 2) return names;
 		Person[] persons = new Person[names.length];
 		HashMap<Person, String> personToName = new HashMap<>();
 		String[] res = new String[names.length];
 		
+		//Fill personToName hashmap
 		for(int i = 0; i < names.length; i++) {
 			String[] name = names[i].split(" ");
 			int num = romanToInt(name[1]);
@@ -54,15 +59,19 @@ public class RoyalNumbers {
 			persons[i] = p;
 			personToName.put(p, names[i]);
 		}
+		
+		//Sort logic on Name and Roman Number
 		Arrays.sort(persons, new Comparator<Person>(){
 			@Override
 			public int compare(Person p1, Person p2){
 				String s1 = p1.name;
 				String s2 = p2.name;
-				if(s1.compareTo(s2) != 0){
+				if(s1.compareTo(s2) != 0){ 
+					// Different first name or last name
 					return s1.compareTo(s2);
 				}
 				else{
+					// Same first name and last name, sort by Roman Number
 					return p1.num - p2.num;
 				}
 			}
@@ -74,6 +83,7 @@ public class RoyalNumbers {
 		return res;
 	}
 	
+	//Helper function for transforming Roman Number to Decimal Integer
 	private static int romanToInt(String s){
 		int result = 0;
 		for(int i = 0; i < s.length() - 1; i++){
